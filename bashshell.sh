@@ -10,4 +10,8 @@ pushd ()                                          #the first line merely save th
     DIR_STACK=${DIR_STACK#* }
     cd ${DIR_STACK%% *}
     echo "$PWD"
-  }                                               #the last line merely prints the contents of the stack, with the implication that the leftmost directory is both the current directory and at the top of the stack
+  }          #the last line merely prints the contents of the stack, with the implication that the leftmost directory is both the current directory and at the top of the stack
+cut -f4 -d\| ablums
+cut -f$(getfield $fieldname) -d\| albums
+ who | cut -d' ' -f1
+ mail $(who | cut -d' ' -f1)
