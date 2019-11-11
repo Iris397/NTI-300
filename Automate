@@ -1,0 +1,12 @@
+'usr\\bin\\spam'
+ print(os.path.join('C:\\Users\\asweigart', filename))
+C:\Users\asweigart\accounts.txt
+C:\Users\asweigart\details.csv
+C:\Users\asweigart\invite.docx
+'C:\\Python34'
+'C:\\Windows\\System32'
+Traceback (most recent call last):
+  File "<pyshell#18>", line 1, in <module>
+    os.chdir('C:\\ThisFolderDoesNotExist')
+FileNotFoundError: [WinError 2] The system cannot find the file specified:
+'C:\\ThisFolderDoesNotExist'
