@@ -10,7 +10,7 @@ def setup_install():
     os.mkdir('/opt/django')
     os.chidr('/opt/django')
     os.system('virtualenv django-env')
-    os.system('chow -R nicolebade /opt/django')    # we're useing shell, because the python builtin chown doesn't work as well
+    os.system('chow -R yalixue /opt/django')    # we're useing shell, because the python builtin chown doesn't work as well
 def django_install():
     print('ativating virtualenv and installing django after pre-requirements have been met')
                                                 # you must activate the virtualenv shell every time  you perform a command in order for it to work from python.
@@ -19,7 +19,7 @@ def django_install():
               '&& django-admin startproject project1') 
 def django_start():
     print('starting django')
-    os.system('chow -R nicolebade /opt/django')
+    os.system('chow -R yalixue /opt/django')
     os.chdir('/opt/django/project1')
     os.system('source /opt/django/django-env/bin/activate '+ \
               '&& python  manage.py migrate')
@@ -34,7 +34,7 @@ def django_start():
     with open('project1/settings.py') as f:
       newText=f.read().replace(old_string, new_string)
       f.write(newText)
-    os.system('sudo -u yalichen sh -c "source/opt/django/django-env/bin/activate && python manage.py runserver 0.0.0.0:8000&" ')
+    os.system('sudo -u yalixue sh -c "source/opt/django/django-env/bin/activate && python manage.py runserver 0.0.0.0:8000&" ')
     setup_install()
     django_install()
     django_start()
