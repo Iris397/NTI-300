@@ -19,7 +19,7 @@ def django_install():
               '&& django-admin startproject project1') 
 def django_start():
     print('starting django')
-    os.system('chow -R yalixue /opt/django')
+    os.system('chown -R yalixue /opt/django')
     os.chdir('/opt/django/project1')
     os.system('source /opt/django/django-env/bin/activate '+ \
               '&& python  manage.py migrate')
