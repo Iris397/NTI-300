@@ -8,7 +8,7 @@ def setup_install():
     os.system('pip install virtualenv')
     os.chdir('/opt')
     os.mkdir('/opt/django')
-    os.chidr('/opt/django')
+    os.chdir('/opt/django')
     os.system('virtualenv django-env')
     os.system('chow -R yalixue /opt/django')    # we're useing shell, because the python builtin chown doesn't work as well
 def django_install():
