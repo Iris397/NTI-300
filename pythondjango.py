@@ -14,7 +14,7 @@ def setup_install():
 def django_install():
     print('ativating virtualenv and installing django after pre-requirements have been met')
                                                 # you must activate the virtualenv shell every time  you perform a command in order for it to work from python.
-    os.system('souce ‘/opt/django’django-env/bin/activate '+ \
+    os.system('souce /opt/django/django-env/bin/activate '+ \
               '&& django-admin --version ' + \
               '&& django-admin startproject project1') 
 def django_start():
