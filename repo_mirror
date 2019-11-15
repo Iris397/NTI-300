@@ -1,0 +1,11 @@
+#!/bin/bash
+#don't forget to make a disk size of 50GB - 100GB for your VM.
+yum -y install nginx
+systemctl start nginx
+systemctl enable nginx
+firewall-cmd --zone=public --permanent --add-service=http
+firewall-cmd --zone=public --permanent --add-service=https
+firewall-cmd --reload
+yum -y install createrepo yum-utils
+mkdir -p /var/www/html/repos/epel
+reposync -g -l -d -m -repoid=epel --newest-only --download-metadata --download_path=/var/www/html/repos/
