@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/user/bin/python
 
 import os
 import re
