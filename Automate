@@ -10,3 +10,25 @@ Traceback (most recent call last):
     os.chdir('C:\\ThisFolderDoesNotExist')
 FileNotFoundError: [WinError 2] The system cannot find the file specified:
 'C:\\ThisFolderDoesNotExist'
+
+myFiles = ['accounts.txt', 'details.csv', 'invite.docx'] #the file handling code 
+for filename in myFiles:
+        print(os.path.join('C:\\Users\\asweigart', filename))
+C:\Users\asweigart\accounts.txt
+C:\Users\asweigart\details.csv
+C:\Users\asweigart\invite.docx
+
+import shelve                       #the shelve code 
+shelfFile = shelve.open('mydata')
+cats = ['Zophie', 'Pooka', 'Simon']
+shelfFile['cats'] = cats
+shelfFile.close()
+
+import pprint                        #the pretty print code
+cats = [{'name': 'Zophie', 'desc': 'chubby'}, {'name': 'Pooka', 'desc': 'fluffy'}]
+pprint.pformat(cats)
+"[{'desc': 'chubby', 'name': 'Zophie'}, {'desc': 'fluffy', 'name': 'Pooka'}]"
+fileObj = open('myCats.py', 'w')
+fileObj.write('cats = ' + pprint.pformat(cats) + '\n')
+83
+>>> fileObj.close()
