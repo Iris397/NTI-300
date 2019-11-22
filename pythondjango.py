@@ -38,8 +38,7 @@ hon manage.py shell')
       newText=f.read().replace(old_string, new_string)
     with open('project1/settings.py',"w") as f:
         f.write(newText)
-    os.system('sudo -u yalixue468 sh -c "source /opt/django/django-env/bin/activate && python manage.py runserver 0
-.0.0.0:8000&" ')
+    os.system('sudo -u yalixue468 sh -c "source /opt/django/django-env/bin/activate && python manage.py runserver 0.0.0.0:8000&" ')
 setup_install()
 django_install()
 django_start()
