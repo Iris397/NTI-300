@@ -13,7 +13,7 @@ import json
 credentials = GoogleCredentials.get_application_default()
 compute = discovery.build('compute','v1',credentials=credentials)
 
-project = 'nti-30-2019'
+project = 'regal-ceiling-254202'
 zone = 'us-centrall-a'
 name = 'yalixue468'
 
