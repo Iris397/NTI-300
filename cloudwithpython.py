@@ -6,7 +6,7 @@
 #please choose a name other than test3
 
 from oauth2client.client import GoogleCredentials
-from googlepiclient import discovery
+from googleapiclient import discovery
 import pprint
 import json
 
