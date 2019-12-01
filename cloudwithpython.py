@@ -13,7 +13,7 @@ import json
 credentials = GoogleCredentials.get_application_default()
 compute = discovery.build('compute', 'v1', credentials=credentials)
 
-project = 'pythondjango.py-254202'
+project = ‘regal-ceiling-254202’
 zone = 'us-central1-a'
 name = 'testtesttest'
 
