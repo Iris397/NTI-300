@@ -13,7 +13,7 @@ import json
 credentials = GoogleCredentials.get_application_default()
 compute = discovery.build('compute', 'v1', credentials=credentials)
 
-project = 'regal-ceiling-254202'
+project = 'gothic-calling-254202'
 zone = 'us-central1-a'
 name = 'testtesttest'
 
@@ -22,7 +22,7 @@ def list_instances(compute, project, zone):
 	return result['items']
 
 def create_instance(compute, project, zone, name):
-	startup_script = open('pythondjango.py', 'r').read()
+	startup_script = open('startup.py', 'r').read()
 	image_response = compute.images().getFromFamily(
 	  project='centos-cloud', family='centos-7').execute()
 	
