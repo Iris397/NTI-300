@@ -10,12 +10,11 @@ def setup_install():
     os.mkdir('/opt/django')
     os.chdir('/opt/django')
     os.system('virtualenv django-env')
-    os.system('chown -R yalixue468 /opt/django')    # we're useing shell, because the python builtin chown doesn't 
-work as well
+    os.system('chown -R yalixue468 /opt/django') # we're useing shell, because the python builtin chown doesn't work as well
 def django_install():
     print('ativating virtualenv and installing django after pre-requirements have been met')
                                                 # you must activate the virtualenv shell every time  you perform a 
-command in order for it to work from python.
+                                                #command in order for it to work from python.
     os.system('source /opt/django/django-env/bin/activate && pip install django')
     os.system('source /opt/django/django-env/bin/activate'+ \
               '&& django-admin startproject project1')
@@ -25,9 +24,8 @@ def django_start():
     os.chdir('/opt/django/project1')
     os.system('source /opt/django/django-env/bin/activate '+ \
               '&& python  manage.py migrate')
-    os.system('source /opt/django/django-env/bin/activate && echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser(\'admin\',\'admin@newproject.com\',\'NTI300NTI300\')" | py\t
-hon manage.py shell')
-    outputwithnewline = subprocess.check_output('curl -s checkip.dyndns.org | sed -e \'s/.*Current IP Address: //\'-e \'s/<.*$//\'',shell=True)
+    os.system('source /opt/django/django-env/bin/activate && echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser(\'admin\',\'admin@newproject.com\',\'NTI300NTI300\')" | python manage.py shell')
+    outputwithnewline = subprocess.check_output('curl -s checkip.dyndns.org | sed -e \'s/.*Current IP Address: //\' -e \'s/<.*$//\' ', shell=True)
     print outputwithnewline
     output = outputwithnewline.replace("\n","")
     old_string = "ALLOWED_HOSTS = []"
