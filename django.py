@@ -2,6 +2,18 @@
 import os
 import re
 import subprocess
+def local_repo():
+    repo="""[local-epel]
+name=NTI300 EPEL
+baseurl=http://35.202.228.51/epel/
+gpgcheck=0
+enabled=1"""
+    os.system('for file in $( ls /etc/yum.repos.d/ ); do mv /etc/yum.repos.d/$file /etc/yum.repos.d/$file.bak; done')
+    print(repo)
+    with open("/etc/yum.repos.d/local-repo.repo","w+") as f:
+      f.write(repo)
+    f.close()
+local_repo()
 def setup_install():
     print('installing pip and virtualenv so we can give django its own version of python')
     os.system('yum -y install python-pip && pip install --upgrade pip')
